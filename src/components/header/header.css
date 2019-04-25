@@ -4,3 +4,9 @@
     height: 3rem;
     width: 3rem;
 }
+.navbar {
+    background-color: black;
+}
+.menu-options {
+    color: white;
+}

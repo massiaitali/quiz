@@ -11,11 +11,11 @@ const logoImg = (<Link to="/">
 const Header = () => {
     return (
         <Fragment>
-            <Navbar brand={logoImg} alignLinks="right">
+            <Navbar brand={logoImg} alignLinks="right" className={'navbar'}>
 
-            <Link to="/solo">Solo Quiz</Link>
+            <Link to="/solo" className={'menu-options'} >Solo Quiz</Link>
 
-            {/*<Link to="/lan">Versus IA Quiz</Link>*/}
+            {/*<Link to="/lan" className={'menu-options'} >Versus IA Quiz</Link>*/}
 
             </Navbar>
         </Fragment>
