@@ -2,11 +2,11 @@ import React, { Fragment } from 'react';
 import { Row, Col, Card } from 'react-materialize';
 import { Link } from "react-router-dom";
 import logoSolo from './soloImg.svg';
-import logoLan from './lanImg.svg';
+//import logoLan from './lanImg.svg';
 import './welcome.css';
 
 const imgSolo = (<img alt={'solo game'} className={'logo-card'} src={logoSolo}/>);
-const imgLan = (<img alt={'Ia game'} className={'logo-card'} src={logoLan}/>);
+//const imgLan = (<img alt={'Ia game'} className={'logo-card'} src={logoLan}/>);
 
 const Welcome = () => {
     return (

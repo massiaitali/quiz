@@ -1,21 +1,39 @@
 import React, { Fragment } from 'react';
-import { Row, Col, Card } from 'react-materialize';
+import { Carousel } from 'react-materialize';
+import './solo.css';
+import QuizItem from "../quizitem/quizitem";
+
+const questions = [
+    {
+        'question': "who is the best dog of the world ?",
+        'answers': [
+            "Tyson",
+            "Betoven"
+        ],
+        'idAnswer': 1
+    },
+    {
+        'question': "who is the cat of the world ?",
+        'answers': [
+            "Gaspar",
+            "Mimi"
+        ],
+        'idAnswer': 2
+    }
+];
 
 const Solo = () => {
     return (
         <Fragment>
-            <Row>
-                <Col m={12} s={12}>
-                    <Card
-                        className="blue-grey darken-1"
-                        textClassName="white-text"
-                        title="Card title"
-                        actions={[<a />,<a />]}
-                    >
-                        I am a very simple card.
-                    </Card>
-                </Col>
-            </Row>
+            <Carousel options={{fullWidth: true}}>
+                {
+                    questions.map((question,index) => (
+                        <div key={index}>
+                            <QuizItem question={question}/>
+                        </div>
+                    ))
+                }
+            </Carousel>
         </Fragment>
     );
 };
