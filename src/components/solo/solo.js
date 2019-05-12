@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Carousel } from 'react-materialize';
 import './solo.css';
 import QuizItem from "../quizitem/quizitem";
+import Score from "../score/score";
 
 const questions = [
     {
@@ -10,7 +11,7 @@ const questions = [
             "Tyson",
             "Betoven"
         ],
-        'idAnswer': 1
+        'idAnswer': 0
     },
     {
         'question': "who is the cat of the world ?",
@@ -18,21 +19,25 @@ const questions = [
             "Gaspar",
             "Mimi"
         ],
-        'idAnswer': 2
+        'idAnswer': 1
     }
 ];
 
 const Solo = () => {
+    const [result, setResult] = useState(0);
     return (
         <Fragment>
             <Carousel options={{fullWidth: true}}>
-                {
-                    questions.map((question,index) => (
-                        <div key={index}>
-                            <QuizItem question={question}/>
-                        </div>
-                    ))
-                }
+            {
+                questions.map((question,index) => (
+                    <div key={index}>
+                        <QuizItem question={question.question} answers={question.answers} idGoodAnswer={question.idAnswer} setResult={setResult} result={result}/>
+                    </div>
+                ))
+            }
+                <div>
+                    <Score score={ `${result}/${questions.length}` } />
+                </div>
             </Carousel>
         </Fragment>
     );

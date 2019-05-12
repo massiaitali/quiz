@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 
-const Lan = () => {
+const ContentQuestion = () => {
     return (
         <Fragment>
-            Hello Ia
+           Only one answer
         </Fragment>
-    );
+    )
 };
 
-export default Lan;
+export default ContentQuestion;

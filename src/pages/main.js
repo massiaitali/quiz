@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './../components/header/header';
 import Welcome from "../components/welcome/welcome";
 import Solo from "../components/solo/solo";
-import Lan from "../components/lan/ia";
+import Lan from "../components/lan/lan";
 import Notfound from "../components/notfound/notfound";
 
 import './google-icons.css';

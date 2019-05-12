@@ -1,21 +1,21 @@
 import React from 'react';
 import { Card } from 'react-materialize';
 import Answer from './../answer/answer';
-import Question from './../question/question';
+import ContentQuestion from '../contentquestion/ContentQuestion';
 
-const CardItem = ({question}) => {
+const CardItem = ({question, answers, idGoodAnswer, setResult, result}) => {
     return (
             <Card
                 className="blue-grey darken-1"
                 textClassName="white-text"
-                title="Card title"
+                title={question}
                 actions={
-                    question.answers.map((answer, index) => (
-                        <Answer key={index} answer={answer} />
+                    answers.map((answer, index) => (
+                        <Answer key={index} index={index} answer={answer} idGoodAnswer={idGoodAnswer} setResult={setResult} result={result}/>
                     ))
                 }
             >
-                <Question question={question.question}/>
+                <ContentQuestion/>
             </Card>
     )
 };
